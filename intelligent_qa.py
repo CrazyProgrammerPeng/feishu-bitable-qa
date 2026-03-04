@@ -34,7 +34,7 @@ class IntelligentQA:
             query_params = self.intent_parser.parse_user_query(user_message)
             logger.info(f"解析结果: intent={query_params.get('intent')}, confidence={query_params.get('confidence')}")
             
-            confidence = query_params.get("confidence", 0)
+            confidence = query_params.get("confidence") or 0
             if confidence < 0.5:
                 explanation = query_params.get("explanation", "")
                 return f"🤔 抱歉，我不太理解您的问题。\n\n{explanation}\n\n请您换一种方式提问，或输入'帮助'查看使用说明。"
