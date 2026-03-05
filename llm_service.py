@@ -14,7 +14,8 @@ class LLMService:
         if not self.api_key:
             raise ValueError("智普API Key未配置，请设置ZHIPU_API_KEY环境变量或在config.py中配置")
     
-    def chat(self, messages: List[Dict], temperature: float = 0.3, model: str = "glm-4.5-air") -> str:
+    def chat(self, messages: List[Dict], temperature: float = 0.3, model: str = None) -> str:
+        model = model or config.ZHIPU_MODEL
         try:
             headers = {
                 "Authorization": f"Bearer {self.api_key}",

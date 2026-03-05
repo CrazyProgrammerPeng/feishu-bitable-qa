@@ -10,6 +10,7 @@ DEFAULT_TABLE_ID = os.getenv("DEFAULT_TABLE_ID")
 
 ZHIPU_API_KEY = os.getenv("ZHIPU_API_KEY")
 ZHIPU_API_URL = os.getenv("ZHIPU_API_URL", "https://open.bigmodel.cn/api/paas/v4/chat/completions")
+ZHIPU_MODEL = os.getenv("ZHIPU_MODEL", "glm-4")
 
 FLASK_HOST = os.getenv("FLASK_HOST", "0.0.0.0")
 FLASK_PORT = int(os.getenv("FLASK_PORT", "80"))
