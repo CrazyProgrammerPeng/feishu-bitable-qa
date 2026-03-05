@@ -77,7 +77,7 @@ class BitableExecutor:
             if sort:
                 request_body["sort"] = self._build_sort(sort)
             
-            limit = query_params.get("limit", 20)
+            limit = query_params.get("limit") or 20
             request_body["page_size"] = min(limit, 500)
             
             logger.info(f"执行查询: {request_body}")
